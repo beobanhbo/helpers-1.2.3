@@ -23,13 +23,13 @@ class KeyboardVisibilityBuilder extends StatefulWidget {
 
 class _KeyboardVisibilityBuilderState extends State<KeyboardVisibilityBuilder>
     with WidgetsBindingObserver {
-  final WidgetsBinding _instance = WidgetsBinding.instance;
+  final WidgetsBinding? _instance = WidgetsBinding.instance;
   bool _isKeyboardVisible = false;
 
   @override
   void didChangeMetrics() {
-    final bottomInset = _instance.window.viewInsets.bottom;
-    final newValue = bottomInset > 0.0;
+    final bottomInset = _instance?.window.viewInsets.bottom;
+    final newValue = (bottomInset ?? 0) > 0.0;
     if (newValue != _isKeyboardVisible) {
       _isKeyboardVisible = newValue;
       if (mounted) setState(() {});
@@ -39,13 +39,13 @@ class _KeyboardVisibilityBuilderState extends State<KeyboardVisibilityBuilder>
 
   @override
   void dispose() {
-    _instance.removeObserver(this);
+    _instance?.removeObserver(this);
     super.dispose();
   }
 
   @override
   void initState() {
-    _instance.addObserver(this);
+    _instance?.addObserver(this);
     didChangeMetrics();
     super.initState();
   }
