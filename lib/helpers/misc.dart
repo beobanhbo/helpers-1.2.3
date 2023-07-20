@@ -114,11 +114,12 @@ class Misc {
 
   static Future<Uint8List> widgetToImageBytes({
     required Widget child,
+    required BuildContext context,
     Size? size,
     double? pixelRatio,
     ui.ImageByteFormat format = ui.ImageByteFormat.png,
     Duration delay = Duration.zero,
-    BuildContext? context,
+    bool inheritTheme = true,
   }) async {
     final ui.FlutterView view = View.of(context);
     final RenderRepaintBoundary repaintBoundary = RenderRepaintBoundary();
@@ -147,7 +148,7 @@ class Misc {
       container: repaintBoundary,
       child: Directionality(
         textDirection: TextDirection.ltr,
-        child: context != null
+        child: inheritTheme
             ? InheritedTheme.captureAll(
                 context,
                 MediaQuery(data: MediaQuery.of(context), child: child),
@@ -174,8 +175,7 @@ class Misc {
     do {
       isDirty = false;
       image = await repaintBoundary.toImage(
-        pixelRatio:
-            pixelRatio ?? (ui.window.physicalSize.width / logicalSize.width),
+        pixelRatio: pixelRatio ?? (view.physicalSize.width / logicalSize.width),
       );
       await Future.delayed(delay);
       if (isDirty) buildScope();
