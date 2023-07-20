@@ -120,11 +120,13 @@ class Misc {
     Duration delay = Duration.zero,
     BuildContext? context,
   }) async {
+    final ui.FlutterView view = View.of(context);
     final RenderRepaintBoundary repaintBoundary = RenderRepaintBoundary();
     final PipelineOwner pipelineOwner = PipelineOwner();
-    final Size logicalSize =
-        size ?? ui.window.physicalSize / ui.window.devicePixelRatio;
+    final Size logicalSize = size ?? view.physicalSize / view.devicePixelRatio;
+
     final RenderView renderView = RenderView(
+      view: view,
       child: RenderPositionedBox(child: repaintBoundary),
       configuration: ViewConfiguration(
         size: logicalSize,
