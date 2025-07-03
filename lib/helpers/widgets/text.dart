@@ -17,7 +17,7 @@ class Headline1 extends StatelessWidget {
     this.locale,
     this.softWrap,
     this.overflow,
-    this.textScaleFactor,
+    this.textScaleFactor= 1.0,
     this.maxLines,
     this.semanticsLabel,
     this.textWidthBasis,
@@ -82,7 +82,7 @@ class Headline1 extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -122,7 +122,8 @@ class Headline1 extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
@@ -146,7 +147,7 @@ class Headline2 extends StatelessWidget {
       this.locale,
       this.softWrap,
       this.overflow,
-      this.textScaleFactor,
+      this.textScaleFactor=1.0,
       this.maxLines,
       this.semanticsLabel,
       this.textWidthBasis})
@@ -211,7 +212,7 @@ class Headline2 extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -250,12 +251,13 @@ class Headline2 extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.headline2!.merge(style));
+        style: context.textTheme.displayMedium!.merge(style));
   }
 }
 
@@ -274,7 +276,7 @@ class Headline3 extends StatelessWidget {
       this.locale,
       this.softWrap,
       this.overflow,
-      this.textScaleFactor,
+      this.textScaleFactor=1.0,
       this.maxLines,
       this.semanticsLabel,
       this.textWidthBasis})
@@ -339,7 +341,7 @@ class Headline3 extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -378,12 +380,13 @@ class Headline3 extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.headline3!.merge(style));
+        style: context.textTheme.displaySmall!.merge(style));
   }
 }
 
@@ -402,7 +405,7 @@ class Headline4 extends StatelessWidget {
       this.locale,
       this.softWrap,
       this.overflow,
-      this.textScaleFactor,
+      this.textScaleFactor=1.0,
       this.maxLines,
       this.semanticsLabel,
       this.textWidthBasis})
@@ -467,7 +470,7 @@ class Headline4 extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -506,12 +509,13 @@ class Headline4 extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.headline4!.merge(style));
+        style: context.textTheme.headlineMedium!.merge(style));
   }
 }
 
@@ -530,7 +534,7 @@ class Headline5 extends StatelessWidget {
       this.locale,
       this.softWrap,
       this.overflow,
-      this.textScaleFactor,
+      this.textScaleFactor=1.0,
       this.maxLines,
       this.semanticsLabel,
       this.textWidthBasis})
@@ -595,7 +599,7 @@ class Headline5 extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -634,12 +638,13 @@ class Headline5 extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.headline5!.merge(style));
+        style: context.textTheme.headlineSmall!.merge(style));
   }
 }
 
@@ -658,7 +663,7 @@ class Headline6 extends StatelessWidget {
       this.locale,
       this.softWrap,
       this.overflow,
-      this.textScaleFactor,
+      this.textScaleFactor=1.0,
       this.maxLines,
       this.semanticsLabel,
       this.textWidthBasis})
@@ -723,7 +728,7 @@ class Headline6 extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -762,12 +767,13 @@ class Headline6 extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.headline6!.merge(style));
+        style: context.textTheme.titleLarge!.merge(style));
   }
 }
 
@@ -786,7 +792,7 @@ class Subtitle1 extends StatelessWidget {
       this.locale,
       this.softWrap,
       this.overflow,
-      this.textScaleFactor,
+      this.textScaleFactor=1.0,
       this.maxLines,
       this.semanticsLabel,
       this.textWidthBasis})
@@ -851,7 +857,7 @@ class Subtitle1 extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -890,12 +896,13 @@ class Subtitle1 extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.subtitle1!.merge(style));
+        style: context.textTheme.titleMedium!.merge(style));
   }
 }
 
@@ -914,7 +921,7 @@ class Subtitle2 extends StatelessWidget {
       this.locale,
       this.softWrap,
       this.overflow,
-      this.textScaleFactor,
+      this.textScaleFactor=1.0,
       this.maxLines,
       this.semanticsLabel,
       this.textWidthBasis})
@@ -979,7 +986,7 @@ class Subtitle2 extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -1018,12 +1025,13 @@ class Subtitle2 extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.subtitle2!.merge(style));
+        style: context.textTheme.titleSmall!.merge(style));
   }
 }
 
@@ -1042,7 +1050,7 @@ class BodyText1 extends StatelessWidget {
       this.locale,
       this.softWrap,
       this.overflow,
-      this.textScaleFactor,
+      this.textScaleFactor=1.0,
       this.maxLines,
       this.semanticsLabel,
       this.textWidthBasis})
@@ -1107,7 +1115,7 @@ class BodyText1 extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -1146,12 +1154,13 @@ class BodyText1 extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.bodyText1!.merge(style));
+        style: context.textTheme.bodyLarge!.merge(style));
   }
 }
 
@@ -1170,7 +1179,7 @@ class BodyText2 extends StatelessWidget {
       this.locale,
       this.softWrap,
       this.overflow,
-      this.textScaleFactor,
+      this.textScaleFactor=1.0,
       this.maxLines,
       this.semanticsLabel,
       this.textWidthBasis})
@@ -1235,7 +1244,7 @@ class BodyText2 extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -1274,12 +1283,13 @@ class BodyText2 extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.bodyText2!.merge(style));
+        style: context.textTheme.bodyMedium!.merge(style));
   }
 }
 
@@ -1298,7 +1308,7 @@ class CaptionText extends StatelessWidget {
       this.locale,
       this.softWrap,
       this.overflow,
-      this.textScaleFactor,
+      this.textScaleFactor=1.0,
       this.maxLines,
       this.semanticsLabel,
       this.textWidthBasis})
@@ -1363,7 +1373,7 @@ class CaptionText extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -1402,12 +1412,13 @@ class CaptionText extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.caption!.merge(style));
+        style: context.textTheme.bodySmall!.merge(style));
   }
 }
 
@@ -1426,7 +1437,7 @@ class ButtonText extends StatelessWidget {
       this.locale,
       this.softWrap,
       this.overflow,
-      this.textScaleFactor,
+      this.textScaleFactor=1.0,
       this.maxLines,
       this.semanticsLabel,
       this.textWidthBasis})
@@ -1491,7 +1502,7 @@ class ButtonText extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -1530,12 +1541,13 @@ class ButtonText extends StatelessWidget {
         locale: locale,
         softWrap: softWrap,
         overflow: overflow,
-        textScaleFactor: textScaleFactor,
+        textScaler: TextScaler.linear(textScaleFactor),
+
         maxLines: maxLines,
         strutStyle: strutStyle,
         textWidthBasis: textWidthBasis,
         semanticsLabel: semanticsLabel,
-        style: context.textTheme.button!.merge(style));
+        style: context.textTheme.labelLarge!.merge(style));
   }
 }
 
@@ -1555,7 +1567,7 @@ class OverlineText extends StatelessWidget {
     this.locale,
     this.softWrap,
     this.overflow,
-    this.textScaleFactor,
+    this.textScaleFactor=1.0,
     this.maxLines,
     this.semanticsLabel,
     this.textWidthBasis,
@@ -1620,7 +1632,7 @@ class OverlineText extends StatelessWidget {
   /// The value given to the constructor as textScaleFactor. If null, will
   /// use the [MediaQueryData.textScaleFactor] obtained from the ambient
   /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
-  final double? textScaleFactor;
+  final double textScaleFactor;
 
   /// An optional maximum number of lines for the text to span, wrapping if necessary.
   /// If the text exceeds the given number of lines, it will be truncated according
@@ -1660,12 +1672,12 @@ class OverlineText extends StatelessWidget {
       locale: locale,
       softWrap: softWrap,
       overflow: overflow,
-      textScaleFactor: textScaleFactor,
+      textScaler: TextScaler.linear(textScaleFactor),
       maxLines: maxLines,
       strutStyle: strutStyle,
       textWidthBasis: textWidthBasis,
       semanticsLabel: semanticsLabel,
-      style: context.textTheme.overline!.merge(style),
+      style: context.textTheme.labelSmall!.merge(style),
     );
   }
 }

@@ -130,7 +130,6 @@ class Misc {
       view: view,
       child: RenderPositionedBox(child: repaintBoundary),
       configuration: ViewConfiguration(
-        size: logicalSize,
         devicePixelRatio: pixelRatio ?? 1.0,
       ),
     );
